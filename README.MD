@@ -4,8 +4,8 @@
 
 #### Setup Basic Express Server
 
-- [] import express and assign to variable
-- [] setup start port variable (5000) and start function
+- [V] import express and assign to variable
+- [V] setup start port variable (5000) and start function
 
 #### Connect To DB
 
@@ -374,4 +374,5 @@
 - [] git remote -v
 - [] setup env vars in GUI
 - [] git push heroku master/main
+
 # e-commerce-api
