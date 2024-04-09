@@ -57,7 +57,7 @@
 
 #### Register Controller
 
-- [] create user
+- [x] create user
 - [] send response with entire user (only while testing)
 - [] check if email already in use (schema and controller)
 - [] ignore 'role'
