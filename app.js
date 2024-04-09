@@ -5,6 +5,9 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 
+// other packages
+const morgan = require('morgan')
+
 // database
 const connectDB = require('./db/connect')
 
@@ -12,6 +15,7 @@ const connectDB = require('./db/connect')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 const notFound = require('./middleware/not-found')
 
+app.use(morgan('tiny'))
 app.use(express.json())
 
 // routes
