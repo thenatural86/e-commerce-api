@@ -3,7 +3,6 @@ const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors')
 
 const register = async (req, res) => {
-  // console.log(req.body)
   const { email, name, password } = req.body
   const emailAlreadyExist = await User.findOne({ email })
 
