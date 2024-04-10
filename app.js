@@ -7,6 +7,7 @@ const app = express()
 
 // other packages
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
 
 // database
 const connectDB = require('./db/connect')
@@ -20,9 +21,15 @@ const notFound = require('./middleware/not-found')
 
 app.use(morgan('tiny'))
 app.use(express.json())
+app.use(cookieParser())
 
 app.get('/', (req, res) => {
   res.send('Hello World')
+})
+
+app.get('/api/v1', (req, res) => {
+  res.send('Hello World')
+  console.log(req.cookies)
 })
 
 app.use('/api/v1/auth', authRouter)
