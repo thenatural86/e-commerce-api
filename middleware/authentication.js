@@ -1,14 +1,19 @@
-// const User = require('../models/User')
-const isTokenValid = require('../utils')
+const { isTokenValid } = require('../utils')
 const CustomError = require('../errors')
 
 const authenticateUser = async (req, res, next) => {
   const token = req.signedCookies.token
   if (!token) {
-    console.log('No token present')
+    throw new CustomError.UnauthenticatedError('Authentication invalid')
   }
-  console.log('token present')
-  next()
+  try {
+    const { name, userId, role } = isTokenValid({ token })
+    req.user = { name, userId, role }
+    // console.log('PAYLOAD', payload)
+    next()
+  } catch (error) {
+    throw new CustomError.UnauthenticatedError('Authentication invalid')
+  }
 }
 
 module.exports = { authenticateUser }
