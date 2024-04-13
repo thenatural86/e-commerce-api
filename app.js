@@ -17,8 +17,8 @@ const authRouter = require('./routes/authRoutes')
 const userRouter = require('./routes/userRoutes')
 
 // middleware
-const errorHandlerMiddleware = require('./middleware/error-handler')
 const notFound = require('./middleware/not-found')
+const errorHandlerMiddleware = require('./middleware/error-handler')
 
 app.use(morgan('tiny'))
 app.use(express.json())
