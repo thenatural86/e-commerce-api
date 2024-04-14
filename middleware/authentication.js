@@ -3,8 +3,7 @@ const { isTokenValid } = require('../utils')
 
 const authenticateUser = async (req, res, next) => {
   const token = req.signedCookies.token
-  console.log('SIGNED COOKIES', req.signedCookies)
-  console.log('TOKEN', token)
+
   if (!token) {
     throw new CustomError.UnauthenticatedError('Authentication invalid')
   }
@@ -13,7 +12,6 @@ const authenticateUser = async (req, res, next) => {
     req.user = { name, userId, role }
     next()
   } catch (error) {
-    console.log(error)
     throw new CustomError.UnauthenticatedError('Authentication invalid')
   }
 }
