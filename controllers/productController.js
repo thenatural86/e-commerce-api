@@ -10,12 +10,15 @@ const createProduct = async (req, res) => {
 }
 const getAllProducts = async (req, res) => {
   const products = await Product.find({})
-  console.log(products)
   res.status(StatusCodes.OK).json({ products })
 }
 
 const getSingleProduct = async (req, res) => {
-  res.send('get single product route')
+  const { id: productId } = req.params
+  const product = await Product.findOne({ _id: productId }).populate('name')
+
+  console.log(product)
+  res.status(StatusCodes.OK).json(product)
 }
 
 const updateProduct = async (req, res) => {
