@@ -9,7 +9,9 @@ const createProduct = async (req, res) => {
   res.send({ product })
 }
 const getAllProducts = async (req, res) => {
-  res.send('get all products route')
+  const products = await Product.find({})
+  console.log(products)
+  res.status(StatusCodes.OK).json({ products })
 }
 
 const getSingleProduct = async (req, res) => {
