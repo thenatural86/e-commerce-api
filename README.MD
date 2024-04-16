@@ -207,10 +207,10 @@
 #### Remaining Controllers (apart from uploadImage)
 
 - [x] getAllProducts
-- [] getSingleProduct
-- [] updateProduct
+- [x] getSingleProduct
+- [x] updateProduct
 - [] deleteProduct
-- [] typical CRUD, utilize (task or job) project
+- [x] typical CRUD, utilize (task or job) project
 - [] remember we check already for role 'admin'
 
 #### Upload Image
