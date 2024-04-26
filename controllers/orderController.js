@@ -72,7 +72,8 @@ const createOrder = async (req, res) => {
 }
 
 const getAllOrders = async (req, res) => {
-  res.send('getAllOrders')
+  const orders = await Order.find({})
+  res.status(StatusCodes.OK).json({ orders })
 }
 const getSingleOrder = async (req, res) => {
   res.send('getSingleOrder')
