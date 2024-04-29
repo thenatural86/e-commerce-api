@@ -77,6 +77,7 @@ const getAllOrders = async (req, res) => {
   const orders = await Order.find({})
   res.status(StatusCodes.OK).json({ orders })
 }
+
 const getSingleOrder = async (req, res) => {
   const { id: orderId } = req.params
   const order = await Order.findOne({ _id: orderId })
@@ -92,6 +93,7 @@ const getSingleOrder = async (req, res) => {
 
   res.send('getSingleOrder')
 }
+
 const getCurrentUserOrders = async (req, res) => {
   const orders = await Order.find({ user: req.user.userId })
 
